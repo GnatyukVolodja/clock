@@ -1,0 +1,619 @@
+/*style scroll*/
+::-webkit-scrollbar {
+    /* Let's get this party started*/
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    /* Track*/
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);*/
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    /* Handle*/
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: grey;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);*/
+    border: 1px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #4a4949;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+    width: 10px;
+    height: 10px;
+    background: transparent;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("background.jpg");
+    background-size: 100vmin;
+}
+
+.centered {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.clock {
+    width: 84vmin;
+    height: 84vmin;
+    border-radius: 50%;
+    border: 1px solid black;
+    position: relative;
+    background: white;
+}
+
+.border-clock {
+    border: 2vmin solid black;
+    border-radius: 50%;
+    box-shadow: inset 40px 40px 90px rgba(0, 0, 0, 0.2), inset 10px 10px 30px rgba(0, 0, 0, 0.5), 20px 20px 30px rgba(0, 0, 0, 0.4), 40px 40px 60px rgba(0, 0, 0, 0.4);
+}
+
+.hour-hand, .second-hand, .minute-hand {
+    width: 25vmin;
+    height: 2vmin;
+    background: #000;
+    position: absolute;
+    top: 40vmin;
+    left: calc(50% - 3.9vmin);
+    z-index: 2;
+    transform: rotate(-90deg);
+    transform-origin: 16%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+
+/*.hour-hand:after, .second-hand:after, .minute-hand:after {*/
+/*    content: '';*/
+/*    background: #000;*/
+/*    width: 5vmin;*/
+/*    height: 5vmin;*/
+/*    border-radius: 50%;*/
+/*    z-index: 3;*/
+/*    position: absolute;*/
+/*    top: -1.5vmin;*/
+/*    left: 1.5vmin;*/
+/*}*/
+
+.hour-hand {
+    /*border-top-right-radius: 20%;*/
+    /*border-bottom-right-radius: 20%;*/
+    top: 41vmin;
+    box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+.minute-hand {
+    width: 40vmin;
+    height: 1vmin;
+    top: 41.5vmin;
+    transform-origin: 10%;
+    /*border-top-right-radius: 100%;*/
+    /*border-bottom-right-radius: 100%;*/
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.minute-hand:before {
+    content: '';
+    width: 4.5vmin;
+    height: 4.5vmin;
+    border-radius: 50%;
+    z-index: 99;
+    position: absolute;
+    top: -1.7vmin;
+    left: 1.7vmin;
+    box-shadow: 0 0 9px rgb(255 255 255);
+    background: black;
+}
+
+/*.minute-hand:after {*/
+/*    top: -2vmin;*/
+/*}*/
+
+.second-hand {
+    width: 40vmin;
+    height: 0.5vmin;
+    top: 41.5vmin;
+    transform-origin: 11.5%;
+    box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.4);
+    left: calc(50% - 4.5vmin);
+}
+
+/*.second-hand:after {*/
+/*    top: -2.25vmin;*/
+/*}*/
+
+.number span {
+    width: 5px;
+    height: 5px;
+    background: black;
+    border-radius: 50%;
+}
+
+.number {
+    font-size: 13vmin;
+    font-weight: 600;
+    /*background: blue;*/
+    width: 18vmin;
+    height: 18vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    padding-bottom: 2vmin;
+}
+
+.number_1 {
+    top: 4.5vmin;
+    right: 16.3vmin;
+}
+
+.number_2 {
+    top: 16.7vmin;
+    right: 4.2vmin;
+}
+
+.number_3 {
+    top: 33.1vmin;
+    right: 0vmin;
+}
+
+.number_4 {
+    top: 49.5vmin;
+    right: 4.5vmin;
+}
+
+.number_5 {
+    top: 61.4vmin;
+    right: 16.4vmin;
+}
+
+.number_6 {
+    top: 65.7vmin;
+    right: 32.8vmin;
+}
+
+.number_7 {
+    top: 61.5vmin;
+    left: 16.6vmin;
+}
+
+.number_8 {
+    top: 49.6vmin;
+    left: 4.6vmin;
+}
+
+.number_9 {
+    top: 33.2vmin;
+    left: 0vmin;
+}
+
+.number_10 {
+    top: 16.6vmin;
+    left: 4.3vmin;
+}
+
+.number_11 {
+    top: 4.5vmin;
+    left: 16.3vmin;
+}
+
+.number_12 {
+    top: 0vmin;
+    left: 33vmin;
+}
+
+
+hr {
+    width: 84vmin;
+    /*border: 2px solid white;*/
+    margin: 0 !important;
+    position: absolute;
+    top: 42vmin;
+    z-index: 5;
+}
+
+
+.big-label {
+    width: 3vmin;
+    height: 0.8vmin;
+    background: black;
+    position: absolute;
+    z-index: 555;
+}
+
+.big-label-1 {
+    transform: rotate(120deg);
+    top: 7vmin;
+    right: 20.1vmin;
+}
+
+.big-label-7 {
+    transform: rotate(120deg);
+    top: 76.2vmin;
+    left: 20.6vmin;
+}
+
+.big-label-2 {
+    transform: rotate(150deg);
+    top: 21.7vmin;
+    right: 5.6vmin;
+}
+
+.big-label-8 {
+    transform: rotate(150deg);
+    top: 61.7vmin;
+    left: 6vmin;
+}
+
+.big-label-3 {
+    transform: rotate(180deg);
+    top: 41.7vmin;
+    right: 0.4vmin;
+}
+
+.big-label-9 {
+    transform: rotate(180deg);
+    top: 41.7vmin;
+    left: 0.4vmin;
+}
+
+.big-label-4 {
+    transform: rotate(210deg);
+    top: 61.6vmin;
+    right: 5.8vmin
+}
+
+.big-label-10 {
+    transform: rotate(210deg);
+    top: 21.7vmin;
+    left: 5.7vmin;
+}
+
+.big-label-5 {
+    transform: rotate(240deg);
+    top: 76.1vmin;
+    right: 20.4vmin;
+}
+
+.big-label-11 {
+    transform: rotate(240deg);
+    top: 7vmin;
+    left: 20.3vmin;
+}
+
+.big-label-6 {
+    transform: rotate(270deg);
+    top: 81.4vmin;
+    right: 40.3vmin;
+}
+
+.big-label-12 {
+    transform: rotate(270deg);
+    top: 1.4vmin;
+    left: 40.4vmin;
+}
+
+.small-label {
+    width: 2vmin;
+    height: 0.3vmin;
+    background: black;
+    position: absolute;
+    z-index: 555;
+}
+
+.small-label-1_1 {
+    transform: rotate(126deg);
+    top: 9.2vmin;
+    right: 17vmin;
+}
+
+.small-label-1_2 {
+    transform: rotate(132deg);
+    top: 11.8vmin;
+    right: 13.7vmin;
+}
+
+.small-label-1_3 {
+    transform: rotate(138deg);
+    top: 14.9vmin;
+    right: 10.7vmin;
+}
+
+.small-label-1_4 {
+    transform: rotate(144deg);
+    top: 18.1vmin;
+    right: 8vmin;
+}
+
+.small-label-2_1 {
+    transform: rotate(156deg);
+    top: 25.5vmin;
+    right: 3.8vmin;
+}
+
+.small-label-2_2 {
+    transform: rotate(162deg);
+    top: 29.5vmin;
+    right: 2.4vmin;
+}
+
+.small-label-2_3 {
+    transform: rotate(168deg);
+    top: 33.6vmin;
+    right: 1.4vmin;
+}
+
+.small-label-2_4 {
+    transform: rotate(174deg);
+    top: 37.7vmin;
+    right: 0.7vmin;
+}
+
+
+.small-label-3_1 {
+    transform: rotate(186deg);
+    top: 46vmin;
+    right: 0.7vmin;
+}
+
+.small-label-3_2 {
+    transform: rotate(192deg);
+    top: 50.4vmin;
+    right: 1.4vmin;
+}
+
+.small-label-3_3 {
+    transform: rotate(198deg);
+    top: 54.4vmin;
+    right: 2.4vmin;
+}
+
+.small-label-3_4 {
+    transform: rotate(204deg);
+    top: 58.4vmin;
+    right: 4vmin;
+}
+
+.small-label-4_1 {
+    transform: rotate(216deg);
+    top: 65.7vmin;
+    right: 8.2vmin;
+}
+
+.small-label-4_2 {
+    transform: rotate(222deg);
+    top: 69vmin;
+    right: 10.8vmin;
+}
+
+.small-label-4_3 {
+    transform: rotate(228deg);
+    top: 71.9vmin;
+    right: 13.8vmin;
+}
+
+.small-label-4_4 {
+    transform: rotate(234deg);
+    top: 74.6vmin;
+    right: 17vmin;
+}
+
+.small-label-5_1 {
+    transform: rotate(246deg);
+    top: 78.7vmin;
+    right: 24.4vmin;
+}
+
+.small-label-5_2 {
+    transform: rotate(252deg);
+    top: 80vmin;
+    right: 28.3vmin;
+}
+
+.small-label-5_3 {
+    transform: rotate(258deg);
+    top: 81.2vmin;
+    right: 32.3vmin;
+}
+
+.small-label-5_4 {
+    transform: rotate(264deg);
+    top: 81.9vmin;
+    right: 36.5vmin;
+}
+
+.small-label-6_1 {
+    transform: rotate(276deg);
+    top: 81.9vmin;
+    left: 36.7vmin;
+}
+
+.small-label-6_2 {
+    transform: rotate(282deg);
+    top: 81.3vmin;
+    left: 32.5vmin;
+}
+
+.small-label-6_3 {
+    transform: rotate(288deg);
+    top: 80.2vmin;
+    left: 28.5vmin;
+}
+
+.small-label-6_4 {
+    transform: rotate(294deg);
+    top: 78.8vmin;
+    left: 24.5vmin;
+}
+
+.small-label-7_1 {
+    transform: rotate(306deg);
+    top: 74.7vmin;
+    left: 17.2vmin;
+}
+
+.small-label-7_2 {
+    transform: rotate(312deg);
+    top: 72.1vmin;
+    left: 13.9vmin;
+}
+
+.small-label-7_3 {
+    transform: rotate(318deg);
+    top: 69.1vmin;
+    left: 10.8vmin;
+}
+
+.small-label-7_4 {
+    transform: rotate(324deg);
+    top: 65.7vmin;
+    left: 8.2vmin;
+}
+
+
+.small-label-8_1 {
+    transform: rotate(336deg);
+    top: 58.5vmin;
+    left: 4vmin;
+}
+
+.small-label-8_2 {
+    transform: rotate(342deg);
+    top: 54.4vmin;
+    left: 2.4vmin;
+}
+
+.small-label-8_3 {
+    transform: rotate(348deg);
+    top: 50.4vmin;
+    left: 1.4vmin;
+}
+
+.small-label-8_4 {
+    transform: rotate(354deg);
+    top: 46.4vmin;
+    left: 0.7vmin;
+}
+
+.small-label-9_1 {
+    transform: rotate(366deg);
+    top: 37.5vmin;
+    left: 0.7vmin;
+}
+
+.small-label-9_2 {
+    transform: rotate(372deg);
+    top: 33.5vmin;
+    left: 1.4vmin;
+}
+
+.small-label-9_3 {
+    transform: rotate(378deg);
+    top: 29.6vmin;
+    left: 2.4vmin;
+}
+
+.small-label-9_4 {
+    transform: rotate(384deg);
+    top: 25.5vmin;
+    left: 3.8vmin;
+}
+
+.small-label-10_1 {
+    transform: rotate(396deg);
+    top: 18.2vmin;
+    left: 8vmin;
+}
+
+.small-label-10_2 {
+    transform: rotate(402deg);
+    top: 14.8vmin;
+    left: 10.7vmin;
+}
+
+.small-label-10_3 {
+    transform: rotate(408deg);
+    top: 11.9vmin;
+    left: 13.7vmin;
+}
+
+.small-label-10_4 {
+    transform: rotate(414deg);
+    top: 9.1vmin;
+    left: 17vmin;
+}
+
+.small-label-11_1 {
+    transform: rotate(426deg);
+    top: 5vmin;
+    left: 24.5vmin;
+}
+
+.small-label-11_2 {
+    transform: rotate(432deg);
+    top: 3.5vmin;
+    left: 28.5vmin;
+}
+
+.small-label-11_3 {
+    transform: rotate(438deg);
+    top: 2.3vmin;
+    left: 32.4vmin;
+}
+
+.small-label-11_4 {
+    transform: rotate(444deg);
+    top: 1.6vmin;
+    left: 36.6vmin;
+}
+
+.small-label-12_1 {
+    transform: rotate(456deg);
+    top: 1.4vmin;
+    right: 36.6vmin;
+}
+
+.small-label-12_2 {
+    transform: rotate(462deg);
+    top: 2.1vmin;
+    right: 32.4vmin;
+}
+
+.small-label-12_3 {
+    transform: rotate(468deg);
+    top: 3.3vmin;
+    right: 28.2vmin;
+}
+
+.small-label-12_4 {
+    transform: rotate(474deg);
+    top: 4.8vmin;
+    right: 24.2vmin;
+}

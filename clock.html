@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>clock</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex align-items-center justify-content-center">
+<div id="app" class="container">
+    <div class="centered d-flex align-items-center justify-content-center">
+        <div class="border-clock bg-dark d-flex align-items-center justify-content-center">
+            <div class="clock">
+                <div class="second-hand" style="transform: rotate(0deg)"></div>
+                <div class="minute-hand" style="transform: rotate(120deg)"></div>
+                <div class="hour-hand" style="transform: rotate(240deg)"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+  const apps = {
+    data () {
+      return {}
+    },
+    methods: {
+      build_numbers () {
+        for (let i = 1; i < 13; i++) {
+          document.querySelector('.clock').insertAdjacentHTML('afterbegin', `<span class="number number_${i}">${i}</span>`)
+        }
+        this.build_big_label()
+      },
+      build_big_label () {
+        for (let i = 1; i < 13; i++) {
+          document.querySelector('.clock').insertAdjacentHTML('afterbegin', `<span class="big-label big-label-${i}"></span>`)
+        }
+        this.build_small_label()
+      },
+      build_small_label () {
+        for (let i = 1; i < 13; i++) {
+          for (let j = 1; j < 5; j++) {
+            document.querySelector('.clock').insertAdjacentHTML('afterbegin', `<span class="small-label small-label-${i}_${j}"></span>`)
+          }
+        }
+        this.start()
+      },
+      start () {
+        const time = {
+          second: document.querySelector('.second-hand'),
+          minute: document.querySelector('.minute-hand'),
+          hour: document.querySelector('.hour-hand')
+        }
+        const getSeconds = date => (date.getSeconds() / 60) * 360 - 90
+        const getMinutes = date =>
+          (date.getMinutes() / 60) * 360 + (date.getSeconds() / 60) * 6 - 90
+        const getHours = date =>
+          (date.getHours() / 12) * 360 + (date.getMinutes() / 60) * 30 - 90
+        const setDate = () => {
+          time.second.style.transform = `rotate(${getSeconds(new Date())}deg)`
+          time.minute.style.transform = `rotate(${getMinutes(new Date())}deg)`
+          time.hour.style.transform = `rotate(${getHours(new Date())}deg)`
+          new Audio('tik.mp3').play()
+        }
+        setInterval(setDate, 1000)
+      }
+    },
+    mounted () {
+      this.build_numbers()
+      console.log('mounted()')
+    }
+  }
+  Vue.createApp(apps).mount('#app')
+</script>
+
+</body>
+</html>
+
