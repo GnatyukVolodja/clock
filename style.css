@@ -683,13 +683,13 @@ hr {
 
 .num_1 {
     top: 4vmin;
-    left: -1vmin;
+    left: -0.5vmin;
     transform: rotate(90deg);
 }
 
 .num_2 {
     top: 11vmin;
-    left: -1vmin;
+    left: -0.5vmin;
     transform: rotate(90deg);
 }
 
@@ -707,7 +707,7 @@ hr {
 
 
 .num_5 {
-    /*top: 2vmin;*/
+    top: 0.5vmin;
     /*left: 0vmin;*/
 }
 
