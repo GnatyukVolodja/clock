@@ -52,12 +52,19 @@ body {
     background-size: 100vmin;
 }
 
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .centered {
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 50px;
+    bottom: 50px;
     left: 0;
     right: 0;
+    z-index: 100;
 }
 
 .clock {
@@ -616,4 +623,171 @@ hr {
     transform: rotate(474deg);
     top: 4.8vmin;
     right: 24.2vmin;
+}
+
+/*----------------------------------------------------------------*/
+.digital-clock {
+    width: 150vmin;
+    /*height: 34vw;*/
+    height: 65vmin;
+    border-radius: 25px;
+    background: black;
+    /*padding: 25vmin 10vmin;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cols {
+    width: 12vmin;
+}
+
+.numbers-hl, .numbers-ml, .numbers-sl, .numbers-hr, .numbers-mr, .numbers-sr {
+    position: relative;
+    /*background: white;*/
+    height: 17vmin;
+    /*border: 1px solid red;*/
+    display: flex;
+    justify-content: center;
+    padding: 0 !important;
+}
+.numbers-day1, .numbers-day2, .numbers-month1, .numbers-month2, .numbers-year1, .numbers-year2, .numbers-year3, .numbers-year4 {
+    position: relative;
+    /*background: white;*/
+    height: 16vmin;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    padding: 0 !important;
+}
+
+.num {
+    background: red;
+    border-radius: 25px;
+    width: 6vmin;
+    height: 2vmin;
+    z-index: 55555 !important;
+    position: absolute;
+    display: none;
+}
+.nums {
+    background: red;
+    border-radius: 25px;
+    width: 5vmin;
+    height: 1vmin;
+    z-index: 55555 !important;
+    position: absolute;
+    /*display: none;*/
+}
+
+.num_1 {
+    top: 4vmin;
+    left: -1vmin;
+    transform: rotate(90deg);
+}
+
+.num_2 {
+    top: 11vmin;
+    left: -1vmin;
+    transform: rotate(90deg);
+}
+
+.num_3 {
+    top: 4vmin;
+    left: 6.5vmin;
+    transform: rotate(90deg);
+}
+
+.num_4 {
+    top: 11vmin;
+    left: 6.5vmin;
+    transform: rotate(90deg);
+}
+
+
+.num_5 {
+    /*top: 2vmin;*/
+    /*left: 0vmin;*/
+}
+
+.num_6 {
+    top: 7.5vmin;
+    /*left: 0vmin;*/
+}
+
+.num_7 {
+    top: 14.5vmin;
+    /*left: 0vmin;*/
+}
+
+.num_8 {
+    top: 4vmin;
+    left: 2.5vmin;
+    transform: rotate(90deg);
+}
+
+.num_9 {
+    top: 11vmin;
+    left: 2.5vmin;
+    transform: rotate(90deg);
+}
+
+.nums_1 {
+    top: 4vmin;
+    left: 0.7vmin;
+    transform: rotate(90deg);
+}
+.nums_2 {
+    top: 10vmin;
+    left: 0.7vmin;
+    transform: rotate(90deg);
+}
+.nums_3 {
+    top: 4vmin;
+    left: 7vmin;
+    transform: rotate(90deg);
+}
+.nums_4 {
+    top: 10vmin;
+    left: 7vmin;
+    transform: rotate(90deg);
+}
+.nums_5 {
+    top: 1vmin;
+    /*left: -2.5vmin;*/
+}
+.nums_6 {
+    top: 7vmin;
+    /*left: -2.5vmin;*/
+}
+.nums_7 {
+    top: 13vmin;
+    /*left: -2.5vmin;*/
+}
+
+.digital-clock .divider {
+    font-size: 15vmin;
+    font-weight: 700;
+    color: red;
+    height: 24vmin;
+    padding-bottom: 3vmin;
+    width: 6vmin;
+}
+
+.dividers {
+    animation-name: divider;
+    animation-iteration-count: infinite;
+    /*animation-timing-function: cubic-bezier(1.0,2.0,0,1.0);*/
+    animation-duration: 1s;
+}
+
+@keyframes divider {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
+}
+
+@-webkit-keyframes divider {
+    from { opacity: 1.0; }
+    to { opacity: 0.0; }
 }
