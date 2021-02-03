@@ -273,7 +273,7 @@ const apps = {
     return {
       analogClock: true
     }
-  },
+  }
 }
 
 Vue.createApp(apps).mount('#app')

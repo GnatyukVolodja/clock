@@ -10,7 +10,6 @@
 </head>
 <body>
 <div id="app" class="container" v-cloak>
-
     <div class="row mt-3">
         <div class="col-12">
             <input type="button" class="btn btn-info"
@@ -18,13 +17,10 @@
                    :value="(!analogClock) ? 'analog clock' : 'digital clock'">
         </div>
     </div>
-
     <component-analog-clock v-if="analogClock"></component-analog-clock>
     <component-digital-clock v-else></component-digital-clock>
 </div>
-
 <script src="app.js"></script>
-
 </body>
 </html>
 
